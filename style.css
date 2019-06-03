@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    /* position: relative; */
+}
+
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 40px;
+}
+
+.container {
+    width: 50%;
+    height: 70vh;
+    margin: 20px auto;
+    border: 1px solid black;
+    text-align: center;
+}
+
+input {
+    margin-top: 30px;
+    display: inline-block;
+    width: 40%;
+}
+
+span {
+    display: inline-block;
+    width: 150px;
+    border: 1px solid black;
+}
