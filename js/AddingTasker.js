@@ -22,8 +22,9 @@ class AddingTasker {
         if (this.num % 2 === 0) newLi.style.backgroundColor = "#f9f9f9";
         ul.append(newLi);
         document.querySelectorAll('span.close').forEach(span => {
-            span.addEventListener('click', removeTasker.removeTaskFromList)
+            span.addEventListener('click', RemovingTasker.removeTaskFromList)
         })
+        newLi.addEventListener('click', TickingTasker.tickTask);
     }
 }
 

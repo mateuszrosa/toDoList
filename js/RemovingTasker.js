@@ -1,7 +1,6 @@
 class RemovingTasker {
-    removeTaskFromList() {
+    static removeTaskFromList() {
         this.parentNode.remove();
+        console.log(addTasker.tasks);
     }
 }
-
-const removeTasker = new RemovingTasker;
