@@ -11,7 +11,7 @@ class AddingTasker {
     }
     addTaskToList(text, ul) {
         const newLi = document.createElement('li');
-        newLi.textContent = text;
+        newLi.innerHTML = `<li><button></button>${text}<button>Remove</button></li>`;
         ul.append(newLi);
     }
 }

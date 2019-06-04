@@ -32,7 +32,7 @@ input {
     font-size: 35px;
 }
 
-span {
+.input span {
     display: inline-block;
     width: 150px;
     background-color: #ddd;
@@ -43,21 +43,38 @@ span {
     transition: .2s;
 }
 
-span:active {
+.input span:active {
     transform: scale(.93);
 }
 
 ul {
     text-align: center;
     margin: 30px auto;
-    font-size: 23px;
     list-style: none;
 }
 
 li {
     background-color: #f9f9f9;
+    position: relative;
+    font-size: 23px;
+    height: 30px;
 }
 
 li:nth-child(odd) {
     background-color: #eee;
+}
+
+li span.close {
+    font-size: 20px;
+    margin-right: 0;
+    width: 70px;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+li span.close:hover {
+    background-color: red;
 }
