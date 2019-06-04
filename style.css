@@ -43,3 +43,14 @@ span {
 span:active {
     transform: scale(.93);
 }
+
+ul {
+    text-align: center;
+    margin: 30px auto;
+    font-size: 23px;
+    list-style: none;
+}
+
+li {
+    border: 1px solid black;
+}
