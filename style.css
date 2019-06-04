@@ -54,14 +54,9 @@ ul {
 }
 
 li {
-    background-color: #f9f9f9;
     position: relative;
     font-size: 23px;
     height: 30px;
-}
-
-li:nth-child(odd) {
-    background-color: #eee;
 }
 
 li span.close {
