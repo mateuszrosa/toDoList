@@ -14,7 +14,7 @@ class AddingTasker {
         console.log('click');
     }
     addTaskToList(text, ul) {
-        // console.log(removeTasker);
+        console.log(this.num);
         this.num++;
         const newLi = document.createElement('li');
         newLi.innerHTML = `${text} <span class='close'>x</span>`;
@@ -25,7 +25,6 @@ class AddingTasker {
             span.addEventListener('click', RemovingTasker.removeTaskFromList)
         })
         newLi.addEventListener('click', TickingTasker.tickTask);
+        newLi.addEventListener('doubleclick', TickingTasker.edit);
     }
 }
-
-const addTasker = new AddingTasker;
