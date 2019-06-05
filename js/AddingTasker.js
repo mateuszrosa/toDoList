@@ -7,11 +7,6 @@ class AddingTasker {
         return this.tasks.length;
     }
     addTask(text) {
-        if (text !== "" || text === null) {
-            this.tasks.push(text);
-        } else {
-            alert('Write task text into input!');
-        }
+        this.tasks.push(text);
     }
-    addTaskToList() {}
 }
