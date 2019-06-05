@@ -13,7 +13,7 @@ class toDoList {
             newLi.innerHTML = `${task} <span class='close'>x</span>`;
         })
         this.ul.append(newLi);
-        // document.querySelector('span.close').addEventListener('click', RemovingTasker.removeTaskFromList);
+        newLi.querySelector('span.close').addEventListener('click', RemovingTasker.removeTaskFromList);
         this.spanCounter.textContent = this.addTasker.countingTask();
         this.input.value = "";
     }
