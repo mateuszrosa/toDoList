@@ -3,6 +3,9 @@ class AddingTasker {
         this.tasks = [];
         this.num = 0;
     }
+    countingTask() {
+        return this.tasks.length;
+    }
     addTask(text) {
         if (text !== "" || text === null) {
             this.tasks.push(text);

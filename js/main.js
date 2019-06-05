@@ -3,6 +3,8 @@ class toDoList {
         this.input = document.querySelector('input');
         this.ul = document.querySelector('ul');
         this.addTasker = new AddingTasker;
+        this.spanCounter = document.querySelector('span.taskNumber')
+        this.spanCounter.textContent = this.addTasker.countingTask();
         document.querySelector('span').addEventListener('click', this.startApp.bind(this));
     }
     render() {
@@ -11,6 +13,7 @@ class toDoList {
             newLi.innerHTML = `${task} <span class='close'>x</span>`;
         })
         this.ul.append(newLi);
+        this.spanCounter.textContent = this.addTasker.countingTask();
         this.input.value = "";
     }
     startApp() {
