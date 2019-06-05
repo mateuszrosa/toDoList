@@ -57,6 +57,11 @@ li {
     font-size: 23px;
     padding: 5px 0 5px 50px;
     text-align: left;
+    background-color: #f9f9f9;
+}
+
+li:nth-child(odd) {
+    background-color: #eee;
 }
 
 li.checked::before {
