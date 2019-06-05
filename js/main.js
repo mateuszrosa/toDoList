@@ -9,8 +9,10 @@ class toDoList {
     }
     render() {
         const newLi = document.createElement('li');
-        this.addTasker.tasks.forEach((task) => {
+        this.addTasker.tasks.forEach((task, index) => {
             newLi.innerHTML = `${task} <span class='close'>x</span>`;
+            newLi.dataset.key = index;
+            newLi.classList.add('task');
         })
         this.ul.append(newLi);
         newLi.querySelector('span.close').addEventListener('click', RemovingTasker.removeTaskFromList);
