@@ -1,29 +1,18 @@
 class toDoList {
     constructor() {
         this.input = document.querySelector('input');
-        this.ul = document.querySelector('ul');
-        this.addTasker = new AddingTasker;
-        this.spanCounter = document.querySelector('span.taskNumber')
-        this.spanCounter.textContent = this.addTasker.countingTask();
-        document.querySelector('span').addEventListener('click', this.startApp.bind(this));
+        this.span = document.querySelector('span.add');
+        this.taskNumber = document.querySelector('span.taskNumber');
+        this.span.addEventListener('click', this.startApp.bind(this));
+        this.tasks = [];
     }
-    render() {
-        const newLi = document.createElement('li');
-        this.addTasker.tasks.forEach((task, index) => {
-            newLi.innerHTML = `${task} <span class='close'>x</span>`;
-            newLi.dataset.key = index;
-            newLi.classList.add('task');
-        })
-        this.ul.append(newLi);
-        newLi.querySelector('span.close').addEventListener('click', RemovingTasker.removeTaskFromList);
-        this.spanCounter.textContent = this.addTasker.countingTask();
-        this.input.value = "";
+    add(value) {
+        this.tasks.push(value);
+        return this.tasks;
     }
     startApp() {
-        const task = this.input.value;
-        if (task === "") return alert("Write task!");
-        this.addTasker.addTask(this.input.value);
-        this.render();
+        if (this.input.value === "") return alert("Wtire task!");
+        this.add(this.input.value);
     }
 }
 
