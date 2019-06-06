@@ -64,6 +64,11 @@ li:nth-child(odd) {
     background-color: #eee;
 }
 
+li.checked {
+    text-decoration: line-through;
+    background-color: #ddd;
+}
+
 li.checked::before {
     content: '';
     position: absolute;

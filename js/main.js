@@ -17,11 +17,13 @@ class ToDoList {
         newLi.querySelector('span.close').addEventListener('click', e => {
             this.remove(e);
         });
+        newLi.addEventListener('click', e => {
+            this.done(e);
+        });
         this.ul.append(newLi);
         this.taskNumber.textContent = this.tasks.length;
     }
     add(value) {
-        console.log(this.tasks);
         this.tasks.push(value);
         return this.tasks;
     }
@@ -30,6 +32,9 @@ class ToDoList {
         this.tasks.splice(index, 1);
         e.target.parentNode.remove();
         this.taskNumber.textContent = this.tasks.length;
+    }
+    done(e) {
+        e.target.classList.add('checked');
     }
     startApp() {
         if (this.input.value === "") return alert("Write task!");
