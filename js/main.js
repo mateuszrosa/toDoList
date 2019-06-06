@@ -6,6 +6,7 @@ class ToDoList {
         this.ul = document.querySelector('ul');
         this.span.addEventListener('click', this.startApp.bind(this));
         this.tasks = [];
+        this.taskNumber.textContent = this.tasks.length;
     }
     render() {
         const newLi = document.createElement('li');
@@ -17,7 +18,7 @@ class ToDoList {
             this.remove(e);
         });
         this.ul.append(newLi);
-
+        this.taskNumber.textContent = this.tasks.length;
     }
     add(value) {
         console.log(this.tasks);
@@ -26,11 +27,9 @@ class ToDoList {
     }
     remove(e) {
         const index = e.target.parentNode.dataset.key;
-        console.log(index);
-        console.log(this.tasks[index]);
         this.tasks.splice(index, 1);
-        console.log(this.tasks);
         e.target.parentNode.remove();
+        this.taskNumber.textContent = this.tasks.length;
     }
     startApp() {
         if (this.input.value === "") return alert("Write task!");
