@@ -9,29 +9,25 @@ class ToDoList {
         this.taskNumber.textContent = this.tasks.length;
     }
     render() {
-        const newLi = document.createElement('li');
-        this.tasks.forEach((task, index) => {
-            newLi.innerHTML = `${task} <span class='close'>x</span>`;
-            newLi.dataset.key = index;
-        });
-        newLi.querySelector('span.close').addEventListener('click', e => {
-            this.remove(e);
-        });
-        newLi.addEventListener('click', e => {
-            this.done(e);
-        });
-        this.ul.append(newLi);
+
+        // newLi.querySelector('span.close').addEventListener('click', e => {
+        //     this.remove(e);
+        // });
+        // newLi.addEventListener('click', e => {
+        //     this.done(e);
+        // });
+        this.ul.append(this.add(this.input.value));
         this.taskNumber.textContent = this.tasks.length;
     }
     add(value) {
-        this.tasks.push(value);
-        return this.tasks;
+        const newLi = document.createElement('li');
+        newLi.classList.add('task');
+        newLi.innerHTML = `${value} <span class='close'>x</span>`;
+        newLi.querySelector('span.close').addEventListener('click', this.remove);
+        return newLi;
     }
     remove(e) {
-        const index = e.target.parentNode.dataset.key;
-        this.tasks.splice(index, 1);
-        e.target.parentNode.remove();
-        this.taskNumber.textContent = this.tasks.length;
+        this.parentNode.remove();
     }
     done(e) {
         e.target.classList.add('checked');
