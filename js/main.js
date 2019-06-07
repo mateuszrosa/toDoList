@@ -25,7 +25,7 @@ class ToDoList {
         this.taskNumber.textContent = this.tasks.length;
     }
     done(e) {
-        e.target.classList.add('checked');
+        e.target.classList.toggle('checked');
     }
     startApp() {
         if (this.input.value === "") return alert("Write task!");
